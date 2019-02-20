@@ -2,16 +2,16 @@
   gather_facts: no
   connection: local
 
-  - tasks
+  tasks:
 
-  - name: Collect all BIG-IP facts
-    bigip_device_facts:
-      gather_subset:
-        - all
-      provider:
-        server: "{{ inventory_hostname }}"
-        user: "{{ username }}"
-        password: "{{ password }}"
-        transport: rest
-    delegate_to: localhost
+    - name: Collect all BIG-IP facts
+      bigip_device_facts:
+        gather_subset:
+          - all
+        provider:
+          server: "{{ inventory_hostname }}"
+          user: "{{ username }}"
+          password: "{{ password }}"
+          transport: rest
+      delegate_to: localhost
 
