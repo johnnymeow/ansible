@@ -10,7 +10,7 @@
     - name: Collect all BIG-IP facts
       bigip_device_facts:
         gather_subset:
-          - all
+          - devices
         provider:
           server: "{{ inventory_hostname }}"
           user: "{{ username }}"
