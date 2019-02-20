@@ -3,7 +3,10 @@
   connection: local
 
   tasks:
-
+    - debug: var=inventory_hostname
+    - debug: var=username
+    - debug: var=password
+    
     - name: Collect all BIG-IP facts
       bigip_device_facts:
         gather_subset:
@@ -12,7 +15,7 @@
           server: "{{ inventory_hostname }}"
           user: "{{ username }}"
           password: "{{ password }}"
-          transport: rest
+          transport: cli
           validate_certs: no
       delegate_to: localhost
 
