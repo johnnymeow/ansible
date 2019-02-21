@@ -1,0 +1,19 @@
+- hosts: all
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - debug: var=inventory_hostname
+    - debug: var=username
+    - debug: var=password
+ 
+  - name: Collect BIG-IP facts
+    bigip_facts:
+      provider:
+          server: "{{ inventory_hostname }}"
+          user: "{{ username }}"
+          password: "{{ password }}"
+      include: "interface"
+      #filter: "interface"
+      validate_certs: no
+    register: "poolmembers"
