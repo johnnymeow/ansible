@@ -20,5 +20,5 @@
       delegate_to: localhost
       register: device_info
      
-    - debug: var=devices
+    - debug: var=device_info
 
