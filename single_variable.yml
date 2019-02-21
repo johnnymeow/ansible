@@ -13,7 +13,9 @@
           server: "{{ inventory_hostname }}"
           user: "{{ username }}"
           password: "{{ password }}"
+          transport: rest
+          validate_certs: no
       include: "interface"
       ##filter: "interface"
       validate_certs: no
-    register: "poolmembers"
+    register: "interface"
