@@ -10,12 +10,11 @@
   - name: Collect BIG-IP facts
     bigip_facts:
       provider:
-          server: "{{ inventory_hostname }}"
-          user: "{{ username }}"
-          password: "{{ password }}"
-          transport: rest
-          validate_certs: no
+        server: "{{ inventory_hostname }}"
+        user: "{{ username }}"
+        password: "{{ password }}"
+        transport: rest
+        validate_certs: no
       include: "interface"
       ##filter: "interface"
-      validate_certs: no
     register: "interface"
